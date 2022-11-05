@@ -27,6 +27,17 @@ void afisare(int *arr,int n){
         printf("%d ",arr[i]);
 }
 
+void sortare(int *arr,int n){
+    int i,j,aux;
+    for(i=0;i<n-1;i++){
+        for(j=i+1;j<n;j++)
+            if(arr[i]>arr[j]){
+                aux=arr[i];
+                arr[i]=arr[j];
+                arr[j]=aux;
+            }
+    }
+}
 
 
 int main(){
@@ -39,9 +50,8 @@ int main(){
         exit(0);
     }
     creare(arr,n);
+    sortare(arr,n);
     afisare(arr,n);
-
-
     free(arr);
     return 0;
 }
