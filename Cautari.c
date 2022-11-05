@@ -39,35 +39,57 @@ void sortare(int *arr,int n){
     }
 }
 
-int cautare_lin(int *arr,int n,int cautat){
-    int i;
+int cautare_lin(int *arr,int n){
+    int i,minim=999,maxim=-1,contor=0;
     for(i=0;i<n;i++){
-       if(arr[i]==cautat)
-            break;
+       if(maxim<arr[i])
+            maxim=arr[i];
+        if(minim>arr[i])
+            minim=arr[i];
+        contor++;
     }
-    return i;
+    printf("\nMinimul este %d.",minim);
+    printf("\nMaximul este %d.",maxim);
+    return contor;
 }
 
-int cautare_bin(int *arr,int n,int cautat,int stanga,int dreapta){
+int cautare_bin_max(int *arr,int n,int cautat,int stanga,int dreapta){
     int mij,contor=0;
     while(stanga<=dreapta){
         contor++;
         mij=(stanga+dreapta)/2;
         if(arr[mij]==cautat){
-            printf("S-au realizat %d comparatii.",contor);
-            return mij;
+            printf("\nMaximul este %d.",cautat);
+            return contor;
         }
         else if(cautat>arr[mij])
             stanga=mij+1;
         else
            dreapta=mij-1;
     }
-    return -1;
+}
+
+int cautare_bin_min(int *arr,int n,int cautat,int stanga,int dreapta){
+    int mij,contor=0;
+    while(stanga<=dreapta){
+        contor++;
+        mij=(stanga+dreapta)/2;
+        if(arr[mij]==cautat){
+            printf("\nMinimul este %d.",cautat);
+            return contor;
+        }
+        else if(cautat>arr[mij])
+            stanga=mij+1;
+        else
+           dreapta=mij-1;
+    }
 }
 
 
 int main(){
     int *arr,n,x,iteratii;
+    clock_t start,sfarsit;
+    double durata;
     printf("Introduceti numarul de elemente ale vectorului: ");
     scanf("%d",&n);
     arr=(int*)malloc(n*sizeof(int));
@@ -79,22 +101,24 @@ int main(){
     sortare(arr,n);
     printf("\nVectorul generat aleator este:\n");
     afisare(arr,n);
-    printf("\nIntroduceti elementul cautat: ");
-    scanf("%d",&x);
-    printf("-------------------------------------------------------");
-    printf("\nCAUTARE LINIARA.");
-    iteratii=cautare_lin(arr,n,x)+1;
-    if(iteratii==n+1)
-        printf("\nElementul cautat nu exista in vector.\n");
-    else
-        printf("\nElementul s-a gasit dupa %d comparatii.\n",iteratii);
-    printf("-------------------------------------------------------");
-    printf("\nCAUTARE BINARA.\n");
-    iteratii=cautare_bin(arr,n,x,0,n-1);
-    if(iteratii==-1)
-        printf("Elementul cautat nu exista in vector.");
     printf("\n");
-    printf("-------------------------------------------------------");
+    printf("------------------------------------------------------------------------");
+    printf("\nCAUTARE LINIARA.");
+    start=clock();
+    iteratii=cautare_lin(arr,n);
+    sfarsit=clock();
+    durata=((double)sfarsit-start)/CLOCKS_PER_SEC;
+    printf("\nTabloul a fost accesat de %d ori.\n",iteratii);
+    printf("Timpul de executie al cautarii liniare este %f secunde.\n",durata);
+    printf("------------------------------------------------------------------------");
+    printf("\nCAUTARE BINARA.");
+    start=clock();
+    iteratii=cautare_bin_min(arr,n,arr[0],0,n-1)+cautare_bin_max(arr,n,arr[n-1],0,n-1);
+    sfarsit=clock();
+    durata=((double)sfarsit-start)/CLOCKS_PER_SEC;
+    printf("\nTabloul a fost accesat de %d ori.\n",iteratii);
+    printf("Timpul de executie al cautarilor binare a fost de %f secunde.\n",durata);
+    printf("------------------------------------------------------------------------");
     free(arr);
     return 0;
 }
