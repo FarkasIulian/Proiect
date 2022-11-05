@@ -39,9 +39,18 @@ void sortare(int *arr,int n){
     }
 }
 
+int cautare_lin(int *arr,int n,int cautat){
+    int i;
+    for(i=0;i<n;i++){
+       if(arr[i]==cautat)
+            break;
+    }
+    return i;
+}
+
 
 int main(){
-    int *arr,n;
+    int *arr,n,x,iteratii;
     printf("Introduceti numarul de elemente ale vectorului: ");
     scanf("%d",&n);
     arr=(int*)malloc(n*sizeof(int));
@@ -52,6 +61,13 @@ int main(){
     creare(arr,n);
     sortare(arr,n);
     afisare(arr,n);
+    printf("\nIntroduceti elementul cautat: ");
+    scanf("%d",&x);
+    iteratii=cautare_lin(arr,n,x)+1;
+    if(iteratii==n+1)
+        printf("\nElementul cautat nu exista in vector.");
+    else
+        printf("\nElementul s-a gasit dupa %d comparatii.",iteratii);
     free(arr);
     return 0;
 }
