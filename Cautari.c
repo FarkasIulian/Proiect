@@ -87,11 +87,11 @@ int cautare_bin_min(int *arr,int n,int cautat,int stanga,int dreapta){
 
 
 int main(){
-    int *arr,n,x,iteratii;
+    int *arr,n=100,x,iteratii;
     clock_t start,sfarsit;
     double durata;
-    printf("Introduceti numarul de elemente ale vectorului: ");
-    scanf("%d",&n);
+    //printf("Introduceti numarul de elemente ale vectorului: ");
+    //scanf("%d",&n);
     arr=(int*)malloc(n*sizeof(int));
     if(!arr){
         printf("Eroare alocare dinamic.");
