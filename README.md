@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-.center {
+<style>.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
+</style>
 <body>
 <h1>Se dă un tablou de N elemente ordonate. Să se determine minimul și maximul din tablou</h1>
 <p> Pentru inceput am creat un vector de 1000 de elemente unice , alocat dinamic , pe care le-am generat 
