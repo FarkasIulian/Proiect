@@ -2,8 +2,8 @@
 <html>
 <style>.center {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
+  margin-right: 20px;
   width: 50%;
 }
 </style>
