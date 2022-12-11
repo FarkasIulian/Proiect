@@ -21,6 +21,10 @@ Cazul cel mai favorabil al cautarii binare este atunci cand elementul cautat est
 <h2>Numarul de iteratii si timp de executie</h2>
 <p>Numarul de iteratii( numarul de accesari ale tabloului ) pentru ambele cautari este dat de numarul de comparatii.</p>
 <p>Pentru timpul de executie am utilizat libraria time.h. Cu ajutorul unor variabile de inceput si sfarsit am contorizat timpul de executie al functiilor de cautare, iar apoi am transformat acest timp in secunde prin impartirea duratei la o variabila speciala din librarie "CLOCKS_PER_SEC".</p>
+<h2>Bibliografie</h2>
+<p>https://www.geeksforgeeks.org/linear-search/</p>
+<p>https://www.geeksforgeeks.org/binary-search/</p>
+<p>https://www.javatpoint.com/ds-linear-search-vs-binary-search</p>
 </body>
 </html>
  
