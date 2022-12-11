@@ -12,13 +12,13 @@ cu elemente ordonate.</p>
 O(1), adica elementul cautat a fost gasit dupa prima comparatie.</p>
 <p> Dezavantajul este dat de evenimentul in care elementul cautat se afla la finalul vectorului sau acesta nu exista in vector, timpul de executie fiind O(N).</p>
 <img src="Assets\Linear-Search.png" width="1000">
-<h3>Cautarea binara</h3>
+<h2>Cautarea binara</h2>
 <p>Cautarea binara este o metoda de cautare care se poate utiliza doar pe vectori sortati si algoritmul functioneaza prin impartirea repetata a vectorului in jumatati si returneaza pozitia la care s-a gasit elementul cautat. Cautarea functioneaza prin compararea elementului cautat cu mijlocul vectorului, iar apoi se injumatateste vectorul conform rezultatului comparatiei.</p>
 <p>Avantajul cautarii binare este un numar redus de comparatii si un timp de executie mai scazut in cazul vectorilor de mari dimensiuni.
 Cazul cel mai favorabil al cautarii binare este atunci cand elementul cautat este chiar in mijlocul vectorului reprezentand un timp de executie de O(1), iar cel mai dezavantajos caz este cel in care elementul nu exista in vector sau atunci cand elementul cautat se afla pe prima pozitie sau pe ultima, O(log(N)).</p>
 <p>Dezavantajul cautarii binare este necesitatea de a lucra cu un vector sortat de elemente</p>
 <img src="Assets\BinarySearch.png" width="1000">
-<h4>Numarul de iteratii si timp de executie</h4>
+<h2>Numarul de iteratii si timp de executie</h2>
 <p>Numarul de iteratii( numarul de accesari ale tabloului ) pentru ambele cautari este dat de numarul de comparatii.</p>
 <p>Pentru timpul de executie am utilizat libraria time.h. Cu ajutorul unor variabile de inceput si sfarsit am contorizat timpul de executie al functiilor de cautare, iar apoi am transformat acest timp in secunde prin impartirea duratei la o variabila speciala din librarie "CLOCKS_PER_SEC".</p>
 </body>
