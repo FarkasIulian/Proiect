@@ -12,7 +12,8 @@ cu elemente ordonate.</p>
 compara pe rand fiecare element al vectorului cu variabilele minim si maxim, astfel avand un vector sortat numarul de comparatii facute
 va fi 1000, adica N, pentru a gasi maximul.</p>
 <p>Avantajul cautarii liniare in general este atunci cand este utilizata pe un vector nesortat, astfel timpul executiei poate fi chiar
-O(1), adica elementul cautat a fost gasit dupa prima comparatie. Dezavantajul este dat de evenimentul in care  elementul cautat se afla la finalul vectorului sau acesta nu exista in vector. </p>
+O(1), adica elementul cautat a fost gasit dupa prima comparatie. Dezavantajul este dat de evenimentul in care elementul cautat se afla la finalul vectorului sau acesta nu exista in vector, timpul de executie fiind O(N).</p>
+<img src="Linear-Search.jpg">
 </body>
 </html>
  
