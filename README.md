@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 <body>
-
 <h1>Se dă un tablou de N elemente ordonate. Să se determine minimul și maximul din tablou</h1>
 <p> Pentru inceput am creat un vector de 1000 de elemente unice , alocat dinamic , pe care le-am generat 
 aleator folosind functia time si rand. N-ul nu va fi citit de la tastatura ci hardcodat ca fiind 1000.
